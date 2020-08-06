@@ -6,6 +6,6 @@ end
 
 #You can mount other controllers here
 
-'use Rack::MethodOverride'
+use Rack::MethodOverride
 
 run ApplicationController
