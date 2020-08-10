@@ -17,7 +17,7 @@
 		line-height: 18px;
 	}
 	.wrapper {
-		background: #fff;
+		background: #D0ECF2;
 		-moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
 		-webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
 		box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -31,22 +31,33 @@
 	h1 {
 		font-size: 36px;
 		line-height: 54px;
+		color: #021226;
 	}
 	h2 {
 		border-bottom: 2px solid #ccc;
 		font-size: 24px;
 		line-height: 36px;
 		margin-bottom: 16px;
+		color: #021226;
 	}
 	h3 {
 		font-size: 18px;
 		line-height: 36px;
+		color: #021226;
 	}
 	p {
 		margin-bottom: 18px;
+		color: #021226;
 	}
 	.main {
 		overflow: hidden;
+	}
+	.container {
+		box-shadow: 0 0 10px rgba(0,0,0,.3);
+		background-color: #fff;
+		margin: 16px auto;
+		max-width: 960px;
+		padding: 2.25%;
 	}
 	.content {
 		float: left;
