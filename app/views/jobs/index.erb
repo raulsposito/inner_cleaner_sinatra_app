@@ -1,0 +1,9 @@
+<h1>All Jobs Completed:</h1>
+
+<% @jobs.each do |job| %> 
+    <h4><a href="/jobs/<%= job.id %>"><%= job.title %></a></h4>
+    <img src="<%= job.image_url%> alt="<%= job.title %>" height="200" width="200"><br><br>
+    <strong>Created At: <%= job.created_at %></strong>
+    <p><%= job.description %></p><br>
+    <p><%= job.user.name %></p>
+<% end %>
