@@ -3,6 +3,15 @@ class JobsController < ApplicationController
 
     # CREATE
 
+    get '/jobs/new' do 
+        erb :"/jobs/new"
+    end
+
+    post '/jobs' do 
+        job = Job.create(title: params[:title], image_url: params[:image_url], description: params[:description], user_id: current_user.id, created_at: params[:created_at])
+        redirect "/jobs/#{job.id}"
+    end
+
     # READ 
     get '/jobs' do 
         @jobs = Job.all 
