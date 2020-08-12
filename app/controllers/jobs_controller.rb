@@ -4,12 +4,25 @@ class JobsController < ApplicationController
     # CREATE
 
     get '/jobs/new' do 
-        erb :"/jobs/new"
+        if logged_in?
+            erb :"/jobs/new"
+        else
+            flash[:error] = "You must be logged in to create a Job!"
+            redirect "/"
+        end
+        
     end
 
-    post '/jobs' do 
+    post '/jobs' do
         job = Job.create(title: params[:title], image_url: params[:image_url], description: params[:description], user_id: current_user.id, created_at: params[:created_at])
-        redirect "/jobs/#{job.id}"
+        if job.save
+            flash[:message] = "Job Created Successfully!"
+
+            redirect to "/jobs/#{job.id}"
+        else
+            flash[:error] = "Sorry! Column(s): #{job.errors.full_messages.to_sentence}."
+            redirect to "/jobs/new"
+        end
     end
 
     # READ 
