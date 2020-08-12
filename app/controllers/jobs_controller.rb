@@ -14,10 +14,9 @@ class JobsController < ApplicationController
     end
 
     post '/jobs' do
-        job = Job.create(title: params[:title], image_url: params[:image_url], description: params[:description], user_id: current_user.id, created_at: params[:created_at])
+        job = current_user.jobs.build(title: params[:title], image_url: params[:image_url], description: params[:description], created_at: params[:created_at])
         if job.save
             flash[:message] = "Job Created Successfully!"
-
             redirect to "/jobs/#{job.id}"
         else
             flash[:error] = "Sorry! Column(s): #{job.errors.full_messages.to_sentence}."
