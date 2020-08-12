@@ -38,9 +38,14 @@ class JobsController < ApplicationController
 
     # UPDATE 
 
-    get '/jobs/:id/edit' do 
+    get '/jobs/:id/edit' do
         @job = Job.find(params[:id])
-        erb :'/jobs/edit'
+        if authorized_user?(@job)
+            erb :'/jobs/edit'
+        else 
+            flash[:error] = "Sorry! You're not authorized to edit that Job."
+            redirect "/jobs"
+        end
     end
 
     patch '/jobs/:id' do 
