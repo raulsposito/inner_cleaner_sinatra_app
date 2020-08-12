@@ -25,6 +25,23 @@ class JobsController < ApplicationController
 
     # UPDATE 
 
+    get '/jobs/:id/edit' do 
+        @job = Job.find(params[:id])
+        erb :'/jobs/edit'
+    end
+
+    patch '/jobs/:id' do 
+        @job = Job.find(params[:id])
+        @job.update(title: params[:title], image_url: params[:image_url], description: params[:description])
+        redirect "/jobs/#{@job.id}"
+    end
+    
+
     # DELETE 
 
+    delete '/jobs/:id' do 
+        @job = Job.find(params[:id])
+        @job.destroy 
+        redirect '/jobs'
+    end
 end

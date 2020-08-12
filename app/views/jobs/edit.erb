@@ -1,0 +1,16 @@
+<h1>Edit Job!</h1>
+
+<form class="" action="/jobs/<%= @job.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <label for="title">Title:</label>
+    <input type="text" name="title" value="<%= @job.title %>">
+    <label for="image_url">Image URL:</label>
+    <input type="text" name="image_url" value="<%= @job.image_url %>">
+    <label for="description">Description:</label>
+    <input type="text" name="description" value="<%= @job.title %>">
+    <input type="submit" name="" value="Edit Job">
+</form>
+    
+    
+    
+    
