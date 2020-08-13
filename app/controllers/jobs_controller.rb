@@ -61,4 +61,8 @@ class JobsController < ApplicationController
         @job.destroy 
         redirect '/jobs'
     end
+
+    # LIST REPORT FUNCTIONALITY
+
+
 end
