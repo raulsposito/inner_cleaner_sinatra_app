@@ -13,18 +13,23 @@
 
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
+  
   <body>
+  
 
     <div class="wrapper">
+    
 
-    <% if flash[:error] %>
-    <h3 style="color:red;"><%= flash[:error] %></h3>
-    <% end %>
 
-    <% if flash[:message] %>
-    <h3 style="color:green;"><%= flash[:message] %></h3>
-    <% end %>
+      <div class="flash">
+        <% if flash[:error] %>
+        <h3 style="color:red; padding-top: 30px;"><%= flash[:error] %></h3>
+        <% end %>
 
+        <% if flash[:message] %>
+        <h3 style="color:green; padding-top: 30;"><%= flash[:message] %></h3>
+        <% end %>
+      </div>
 
     <div class="nav">
       <% if logged_in? %>
