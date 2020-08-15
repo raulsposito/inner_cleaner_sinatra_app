@@ -10,6 +10,7 @@ class UsersController < ApplicationController
             session[:user.id] = @user.id 
             redirect "/users/#{@user.id}"
         else 
+            flash[:error] = "We were not able to create a User for you. Please try again!"
             redirect '/signup'
         end
     end
