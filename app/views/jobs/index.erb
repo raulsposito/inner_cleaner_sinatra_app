@@ -1,24 +1,28 @@
 <h1>House Keeping Report!</h1><br>
 
 
-<h3>Jobs Posted:<%= @jobs.size %></h3><br>
+<h3>Total Jobs Posted:<%= @jobs.size %></h3><br>
 
 <% record = [] %>
 <% @jobs.each do |job| %>
     <% record << job.user_id %>
 <% end %>
 
-<h3>User with Jobs posted: <%= record %></h3><br>
+<h3>Users with Jobs posted: <%= record %></h3><br>
 
 <h3>Your Job count: <%= current_user.jobs.count %> </h3><br>
 
 
-<h4>Please see a list of them below:</h4>
+<h3>See all Jobs below:</h3>
 
-<% @jobs.each do |job| %> 
-    <h4><a href="/jobs/<%= job.id %>"><%= job.title %></a></h4>
-    <img src="<%= job.image_url %>" alt="<%= job.title %>" height="200" width="200"><br><br>
-    <strong>Created At: <%= job.created_at %></strong>
-    <p><%= job.description %></p><br>
-    <p><%= job.user.name %></p>
-<% end %>
+<div class="scroll">
+
+    <% @jobs.each do |job| %> 
+        <h3><a href="/jobs/<%= job.id %>"><%= job.title %></a></h3>
+        <img src="<%= job.image_url %>" alt="<%= job.title %>" height="200" width="200"><br><br>
+        <strong>Created At: <%= job.created_at %></strong>
+        <p><%= job.description %></p><br>
+        <p><%= job.user.name %></p>
+    <% end %>
+
+</div>

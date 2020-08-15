@@ -1,16 +1,19 @@
-<h3><%= @jobs.title %></h3>
+<h3>Job title: <%= @jobs.title %></h3>
 <img src="<%= @jobs.image_url %>" alt="<%= @jobs.title %>" height="200" width="200"><br><br>
-<strong>Created At: <%= @jobs.created_at %></strong>
-<p><%= @jobs.description %></p><br>
-<p><%= @jobs.user.name %></p>
+<h2>Created At: <%= @jobs.created_at %></h2>
+<p>Job description: <%= @jobs.description %></p><br>
+<p>Posted by: <%= @jobs.user.name %></p>
 
 <% if authorized_user?(@jobs) %>
 
-<a href="/jobs/<%= @jobs.id %>/edit">Edit Job</a> 
+<div class="nav">
+    <a href="/jobs/<%= @jobs.id %>/edit">Edit Job</a> 
+    
+    
+    <form class="" action="/jobs/<%= @jobs.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" name="" value="Delete this Job">
+    </form>
 
-<form class="" action="/jobs/<%= @jobs.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" name="" value="Delete this Job">
-</form>
-
+</div>
 <% end %>
