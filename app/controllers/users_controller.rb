@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     post '/users' do 
         @user = User.new(params)
         if @user.save 
-            session[:user.id] = @user.id 
+            session[:user_id] = @user.id
+            flash[:message] = "Hi #{@user.name}, Welcome to Inner Cleaner!"
             redirect "/users/#{@user.id}"
         else 
             flash[:error] = "We were not able to create a User for you. Please try again!"
