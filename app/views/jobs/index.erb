@@ -3,12 +3,10 @@
 
 <h3>Total Jobs Posted:<%= @jobs.size %></h3><br>
 
-<% record = [] %>
-<% @jobs.each do |job| %>
-    <% record << job.user_id %>
-<% end %>
-
-<h3>Users with Jobs posted: <%= record %></h3><br>
+<h3>Users who posted Jobs: </h3><br>
+<% @jobs.each do |job| %> 
+   <h3> <%= job.user.name %> </h3>
+<% end %> 
 
 <h3>Your Job count: <%= current_user.jobs.count %> </h3><br>
 
