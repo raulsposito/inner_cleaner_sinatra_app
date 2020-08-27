@@ -1,6 +1,5 @@
 <h1>House Keeping Report!</h1><br>
 
-
 <h3>Total Jobs Posted:<%= @jobs.size %></h3><br>
 
 <h3>Users who posted Jobs: </h3><br>
@@ -9,7 +8,6 @@
 <% end %> 
 
 <h3>Your Job count: <%= current_user.jobs.count %> </h3><br>
-
 
 <h3>See all Jobs below:</h3>
 
@@ -22,5 +20,4 @@
         <p><%= job.description %></p><br>
         <p><%= job.user.name %></p>
     <% end %>
-
 </div>

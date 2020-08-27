@@ -1,6 +1,5 @@
 class JobsController < ApplicationController
     # CRUD 
-
     # CREATE
 
     get '/jobs/new' do 
@@ -25,6 +24,7 @@ class JobsController < ApplicationController
     end
 
     # READ 
+
     get '/jobs' do 
         @jobs = Job.all 
         erb :'jobs/index'
@@ -53,7 +53,6 @@ class JobsController < ApplicationController
         redirect "/jobs/#{@job.id}"
     end
     
-
     # DELETE 
 
     delete '/jobs/:id' do 
@@ -61,8 +60,4 @@ class JobsController < ApplicationController
         @job.destroy 
         redirect '/jobs'
     end
-
-    # LIST REPORT FUNCTIONALITY
-
-
 end

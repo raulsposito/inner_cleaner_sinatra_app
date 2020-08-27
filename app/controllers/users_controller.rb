@@ -30,7 +30,6 @@ class UsersController < ApplicationController
             flash[:error] = "Invalid credentials. Please try again!"
             redirect '/login'
         end
-
     end
 
     get '/users/:id' do
@@ -43,5 +42,4 @@ class UsersController < ApplicationController
         flash[:message] = "Thank you for keeping the house clean!"
         redirect '/'
     end
-
 end
