@@ -5,9 +5,11 @@
 
 <h3>How to start the app:</h3>
 
-1. Bundle install
-2. shotgun
-3. visit localhost:9393
+1. Git Clone
+2. cd into inner_cleaner_sinatra_app
+3. Bundle install
+4. shotgun
+5. visit localhost:9393
 
 
 <h3>Watch Intro Video here:</h3>
