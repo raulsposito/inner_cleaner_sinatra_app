@@ -1,5 +1,7 @@
 <h2>Welcome to the Inner Cleaner Sinatra App!</h2>
 
+![](AppView.png)
+
 <h4>An application to report the cleanup jobs done by the members of the house.</h4>
 
 
